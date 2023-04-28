@@ -1,0 +1,54 @@
+<div class="conatiner">
+
+    <div class="row mt-5">
+        <div class="col-2"></div>
+        <div class="col-8">
+    
+            <div class="card text-center shadow">
+                <div class="card-header">
+                 <h2> CurrencyConverter</h2>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-12">
+                        <input type="text" placeholder="Enter amount" id="id_amount" class="form-control" [(ngModel)]="amount">
+                    </div>
+    
+                  </div>
+                  <div class="row mt-2">
+                    <div class="col-6">
+                        <select name="" id="id_from_country" class="form-select" [(ngModel)]="fromCode">
+                            <option value="">-----</option>
+                            <option *ngFor="let code of currencyCode">{{code}}</option>
+    
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <select name="" id="id_to_country" class="form-select" [(ngModel)]="toCode">
+                            <option value="">-----</option>
+                            <option *ngFor="let code of currencyCode">{{code}}</option>
+    
+                        </select>
+                    </div>
+                  </div>
+    
+                  <div class="row mt-2">
+                    <div class="col-3"></div>
+                    <div class="col-6">
+                        <button class="btn btn-info form-control" (click)="convert()">CONVERT</button>
+                    </div>
+                    <div class="col-3"></div>
+                  </div>
+    
+                </div>
+                <div class="card-footer text-body-secondary" *ngIf="result!=0">
+                  {{amount}} {{fromCode}} is equal to {{result}} {{toCode}}
+                </div>
+              </div>
+    
+    
+        </div>
+        <div class="col-2"></div>
+    </div>
+    
+    </div>
